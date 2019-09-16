@@ -7,7 +7,7 @@
 
   1.xss防护。 
   
-  2.实现请求白名单功能。  
+  2.实现请求白名单功能。(加入@Public于接口方法上)
   
   3.根据token请求头解析用户基本信息存放header上，接口采用@RequestHeader("userId")注解方式获取。
   
