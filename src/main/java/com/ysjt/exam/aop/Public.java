@@ -15,5 +15,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Public {
-    public boolean isEnable() default true;
+    boolean isEnable() default true;
 }
