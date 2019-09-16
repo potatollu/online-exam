@@ -5,6 +5,13 @@ import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 public final class ResponseX extends Response implements Serializable {

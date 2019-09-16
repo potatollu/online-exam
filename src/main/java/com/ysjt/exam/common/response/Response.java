@@ -4,6 +4,13 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 @Data
 public class Response implements Serializable {
 

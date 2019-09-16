@@ -14,6 +14,13 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 @Data
 @Builder
 @AllArgsConstructor

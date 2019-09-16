@@ -7,6 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 @Component
 public class RedisUtils {
 

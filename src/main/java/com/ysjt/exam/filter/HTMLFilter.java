@@ -7,6 +7,13 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 public final class HTMLFilter {
 
     /** regex flag union representing /si modifiers in php **/

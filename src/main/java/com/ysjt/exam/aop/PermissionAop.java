@@ -18,6 +18,13 @@ import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.Map;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 @Component
 @Aspect
 public class PermissionAop {
@@ -38,17 +45,9 @@ public class PermissionAop {
                 token = request.getHeader(name);
             }
         }
-        if (!token.isEmpty()) {
-            Map<Object,Object> userMap = redisUtils.hmget(RedisKeys.EXAM_TOKEN_INFO + token);
-            if (userMap != null && userMap.size() > 0) {
-                //todo 注入userId,username,realName到请求头
-            }else {
-                permitRequestFilter(joinPoint);
-            }
-        }else {
+        if (token.isEmpty()) {
             permitRequestFilter(joinPoint);
         }
-
     }
 
     private void permitRequestFilter(JoinPoint joinPoint) {
@@ -57,16 +56,16 @@ public class PermissionAop {
         for (int i = 0; i < args.length; i++) {
             argTypes[i] = args[i].getClass();
         }
-        Method method = null;
+        Method method;
         try {
             method = joinPoint.getTarget().getClass()
                     .getMethod(joinPoint.getSignature().getName(), argTypes);
+            Public isPublic = method.getAnnotation(Public.class);
+            if (isPublic == null || !isPublic.isEnable()) {
+                throw new BusinessException(ResponseCode.AUTH_FAIL);
+            }
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
-        }
-        Public isPublic = method.getAnnotation(Public.class);
-        if (isPublic == null || !isPublic.isEnable()) {
-            throw new BusinessException(ResponseCode.AUTH_FAIL);
         }
     }
 }

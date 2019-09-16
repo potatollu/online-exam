@@ -5,6 +5,13 @@ import com.ysjt.exam.exception.base.BusinessException;
 
 import java.util.List;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 public interface UserService {
 
     /**

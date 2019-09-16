@@ -2,6 +2,13 @@ package com.ysjt.exam.common.enums;
 
 import com.ysjt.exam.common.response.ResponseCode;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 public enum ExceptionMsg {
 
     USER_EXIT("用户已存在"),

@@ -1,5 +1,12 @@
 package com.ysjt.exam.common.response;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 public enum ResponseCode {
 
     OK(200, "success"),

@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>1.5.17.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ysjt</groupId>
-	<artifactId>com-ysjt-exam</artifactId>
+	<artifactId>ysjt-exam</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>com-ysjt-exam</name>
+	<name>ysjt-exam</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -24,6 +24,10 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 		</dependency>
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>

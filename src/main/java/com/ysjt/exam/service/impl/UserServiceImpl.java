@@ -19,6 +19,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -44,11 +51,17 @@ public class UserServiceImpl implements UserService {
 
         String token = TokenUtils.getToken();
         if (MD5Util.verify(password, exitUser.getPassword())) {
+            //登录成功后，把原来的token清除
+            Object userToken = redisUtils.get(RedisKeys.EXAM_TOKEN_USER_ID + exitUser.getId());
+            if (userToken != null) {
+                redisUtils.del(RedisKeys.EXAM_TOKEN_INFO + userToken, RedisKeys.EXAM_TOKEN_USER_ID + exitUser.getId());
+            }
             Map<String, Object> userMap = new HashMap<>(3);
             userMap.put("userId", exitUser.getId());
             userMap.put("username", exitUser.getUsername());
             userMap.put("realName", exitUser.getRealName());
             redisUtils.hmset(RedisKeys.EXAM_TOKEN_INFO + token, userMap, ONE_DAY_SECONDS);
+            redisUtils.set(RedisKeys.EXAM_TOKEN_USER_ID + exitUser.getId(), token, ONE_DAY_SECONDS);
             return token;
         }
         throw new BusinessException(ExceptionMsg.USERNAME_OR_PASSWORD_ERROR);

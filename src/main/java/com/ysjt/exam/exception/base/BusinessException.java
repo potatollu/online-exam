@@ -3,6 +3,13 @@ package com.ysjt.exam.exception.base;
 import com.ysjt.exam.common.enums.ExceptionMsg;
 import com.ysjt.exam.common.response.ResponseCode;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 public class BusinessException extends RuntimeException {
 
     private int code;

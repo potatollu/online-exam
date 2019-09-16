@@ -6,6 +6,13 @@ import com.ysjt.exam.filter.wrapper.XssHttpServletRequestWrapper;
 import org.springframework.stereotype.Component;
 import java.io.IOException;
 
+/**
+ * @author yuxiaofei
+ * <pre>
+ *
+ * </pre>
+ * @date 2019/9/16 11:18
+ */
 @Component
 @WebFilter
 public class XssFilter implements Filter {
